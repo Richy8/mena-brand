@@ -107,7 +107,8 @@ export default {
 
 .show-overlay {
   padding: toRem(21) 0;
-  background: rgba($brand-sharp-grey, 0.975);
+  background: rgba($brand-sharp-grey, 0.85);
+  backdrop-filter: blur(10px);
 
   .wrapper {
     .logo-section {
