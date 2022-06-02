@@ -67,7 +67,7 @@ export default {
 
 .show-expanded-view {
   color: $brand-sharp-dark !important;
-  background: $brand-red;
+  background: $brand-yellow;
   @include rectangle-shape(205, 46);
   @include flex-row-start-nowrap;
   border-radius: toRem(50);
