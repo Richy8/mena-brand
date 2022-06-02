@@ -37,7 +37,7 @@ export default {
 
 .cursor-state {
   @include square-shape(36);
-  border: toRem(1) solid $brand-faded-grey;
+  border: toRem(1) solid rgba($brand-faded-grey, 0.65);
   transition: 0.08s;
 }
 

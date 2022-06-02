@@ -29,15 +29,10 @@
         </h2>
 
         <!-- MENU SECTION -->
-        <div class="menu-section">
-          <div
-            class="
-              icon icon-hamburger
-              brand-light-grey
-              pointer
-              smooth-transition
-            "
-          ></div>
+        <div class="menu pointer" ref="menuPane" @click="toggleMenu">
+          <div class="line line-one"></div>
+          <div class="line line-two"></div>
+          <div class="line line-three"></div>
         </div>
       </div>
     </div>
@@ -70,6 +65,10 @@ export default {
         this.show_overlay = offTop > 50 ? true : false;
       });
     },
+
+    toggleMenu() {
+      this.$refs.menuPane.classList.toggle("menu-active");
+    },
   },
 };
 </script>
@@ -93,12 +92,53 @@ export default {
       font-size: toRem(21);
     }
 
-    .menu-section {
-      .icon {
-        font-size: toRem(26);
+    .menu {
+      position: relative;
+      @include rectangle-shape(38, 25);
 
-        &:hover {
-          color: $brand-yellow !important;
+      .line {
+        background: $brand-light-grey;
+        @include transition(0.35s);
+        position: absolute;
+        height: toRem(3);
+        left: 0;
+
+        &-one {
+          width: 75%;
+          top: 0;
+        }
+
+        &-two {
+          width: 100%;
+          top: 50%;
+        }
+
+        &-three {
+          width: 50%;
+          top: 100%;
+        }
+      }
+
+      &-active {
+        .line {
+          background: $brand-yellow;
+
+          &-one {
+            width: 100%;
+            transform: rotate(45deg);
+            transform-origin: top left;
+          }
+
+          &-two {
+            width: 0;
+            opacity: 0;
+          }
+
+          &-three {
+            width: 100%;
+            transform: rotate(-45deg);
+            transform-origin: bottom left;
+          }
         }
       }
     }

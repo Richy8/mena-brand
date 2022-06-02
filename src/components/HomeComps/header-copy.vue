@@ -87,8 +87,8 @@ export default {
     }
 
     .copy-description {
+      @include font-height(14.25, 25);
       position: absolute;
-      @include font-height(13, 24);
       text-align: right;
       bottom: toRem(18);
       right: 0;
